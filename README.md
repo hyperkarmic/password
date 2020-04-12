@@ -1,49 +1,29 @@
-# 03 JavaScript: Password Generator
+1)Prompt set up for password length information.  While loop set up for validation purposes to exclude out of range numbers.
 
-Create an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+2)Confirm boxes used to generate character type information.  Empty array set up for random character purposes.  Boiler-plate arrays set up as space for arrays of character-types, and to test logic.  While loop set up, using boolean flag for form validation purposes.  password array length set up as variable for 'for loop' during password generation. 
 
-If you are unfamiliar with special characters, take a look at [some examples](https://www.owasp.org/index.php/Password_special_characters).
+3)For loop set up in "generate password" function, that selects random element for element of available characters.  The for loops runs as many times as the length of the password, and each iteration of the loop, pushes a random character to an empty array.  The array returned and joined with the join("") method.
 
-## User Story
+I used this technique for choosing a random element from an array, 
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+var  passChar = characters[Math.floor(Math.random() * characters.length)];
 
-## Acceptance Criteria
+which I initially was introduced here
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+https://modernweb.com/45-useful-javascript-tips-tricks-and-best-practices/ 
 
-The following image demonstrates the application functionality:
+and is a technique I have used on several "codewars" katas and on personal projects - and allows for a Random array element selection using the Math.random() method, and the length of the given array. 
 
-![password generator demo](./Assets/03-javascript-homework-demo.png)
+I also finished the arrays for the data types.
 
-## Review
+I used the list given here
 
-You are required to submit the following for review:
+https://owasp.org/www-community/password-special-characters 
 
-* The URL of the deployed application.
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
-# password
+4)Variable names changed to more appropriate, self-explicatory names!
+
+5)Screenshots added in Assets.  Comments amended.  Logic amended to exclude non-numerical data on initial prompt box.
+
+
