@@ -1,30 +1,30 @@
 // Assignment Code
 var acc = 0;
 
-var final = [];
-var password = [];
-let ranNum
+var passwordArray = [];
+var characters = [];
+let zeroCheck;
 var abc = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var ABC = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var numbers = ["0","1","2","3","5","6","7","8","9"]
-var spesh = ['"',
+var special = ['"',
 ' ',"!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"];
 
-//let ranNum
+//let zeroCheck will be used to check instances of zero, for validation purposes!
 
-var claw = prompt('Please enter a number between 8 and 128')
+var prompt1 = prompt('Please enter a number between 8 and 128')
 // initial prompt ask
-var hood = parseInt(claw)
+var passwordLength = parseInt(prompt1)
 //turns prompt response to numerical form
 var vrai
 
-if (hood > 7 && hood < 129) {vrai = true}else{vrai = false}
+if (passwordLength > 7 && passwordLength < 129) {vrai = true}else{vrai = false}
 //this logic sets up a condition for the while statement
 while (vrai === false){
   //if the initial conditions aren't met the initial prompt is repeted
-  claw = prompt('Please enter a number between 8 and 128')
-  hood = parseInt(claw);
-  if (hood > 7 && hood < 129) {vrai = true}
+  prompt1 = prompt('Please enter a number between 8 and 128')
+  passwordLength = parseInt(prompt1);
+  if (passwordLength > 7 && passwordLength < 129) {vrai = true}
   //once conditions for truth are met - while loop broken 
 
   //now we are going to work on the prompts
@@ -40,36 +40,36 @@ alert("You need to choose at least one of the following character types for your
 
 //this adds one to the accumalator if confirmed.  and not if not.  ths will be repeated for each of the character types!
 if (confirm("Do you want to include lower case letters????")){
-  password.push(abc)
+  characters.push(abc)
 
 }
 
 //confirm prompt 2
 
 if (confirm("Do you want to include upper case letters????")){
-  password.push(ABC)
+  characters.push(ABC)
 
 }
 
 //confirm prompt 3
 if (confirm("Do you want to include numbers case letters????")){
-  password.push(numbers)
+  characters.push(numbers)
 
 }
 
 //confirm prompt 4
 if (confirm("Do you want to include lower case letters????")){
   acc++
-  password.push(spesh)
+  characters.push(special)
 
 }
-password = password.flat()
-//this turns array or arrays 'password' into a single array;
+characters = characters.flat()
+//this turns array or arrays in 'characters' into a single array;
 //const statement is easy way of accessing array length for password generation purposes!!!
 
-ranNum = password.length;
+zeroCheck = characters.length;
 
-if (ranNum === 0){vrai = false}
+if (zeroCheck === 0){vrai = false}
 //boolean flag set up for form validation purposes
 
 while (vrai === false){
@@ -82,14 +82,14 @@ while (vrai === false){
 
 //this adds one to the accumalator if confirmed.  and not if not.  ths will be repeated for each of the character types!
 if (confirm("Do you want to include lower case letters????")){
-  password.push(abc)
+  characters.push(abc)
 
 }
 
 //confirm prompt 2
 
 if (confirm("Do you want to include upper case letters????")){
-  password.push(ABC)
+  characters.push(ABC)
 
 }
 
@@ -102,20 +102,20 @@ if (confirm("Do you want to include numbers case letters????")){
 //confirm prompt 4
 if (confirm("Do you want to include lower case letters????")){
   acc++
-  password.push(spesh)
+  characters.push(special)
 
 }
-password = password.flat()
-//this turns array or arrays 'password' into a single array;
-//ranNum is easy way of accessing array length for password generation purposes!!!
+characters = characters.flat()
+//this turns array or arrays 'characters' into a single array;
+//zeroCheck is easy way of accessing array length for validation purposes!!!
 
-ranNum = password.length;
-if (ranNum > 0){vrai = true}
+zeroCheck = characters.length;
+if (zeroCheck > 0){vrai = true}
 }
 //resetting vrai to true breaks while loop - designating form validation!!!
 
 
-alert(hood)
+
 
  
 
@@ -126,16 +126,16 @@ function generatePassword() {
 
   
 
-  for (let i = 0; i < hood; i++){
-    var  passChar = password[Math.floor(Math.random() * password.length)];
-    final.push(passChar)
+  for (let i = 0; i < passwordLength; i++){
+    var  passChar = characters[Math.floor(Math.random() * characters.length)];
+    passwordArray.push(passChar)
 
   }
 
 
 
-  console.log(final)
-  return final.join("");
+  console.log(passwordArray)
+  return passwordArray.join("");
 }
 
 // Write password to the #password input
