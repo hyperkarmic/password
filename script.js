@@ -1,12 +1,14 @@
 // Assignment Code
 var acc = 0;
 
+var final = [];
 var password = [];
 let ranNum
-var abc = ["a","b","c"];
-var ABC = ["a","b","c"];
-var numbers = ["1","2","3"]
-var spesh = ["*","/","$"]
+var abc = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var ABC = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var numbers = ["0","1","2","3","5","6","7","8","9"]
+var spesh = ['"',
+' ',"!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\\","]","^","_","`","{","|","}","~"];
 
 //let ranNum
 
@@ -113,7 +115,7 @@ if (ranNum > 0){vrai = true}
 //resetting vrai to true breaks while loop - designating form validation!!!
 
 
-alert(ranNum)
+alert(hood)
 
  
 
@@ -121,7 +123,19 @@ alert(ranNum)
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  return "TODO: Implement password generator";
+
+  
+
+  for (let i = 0; i < hood; i++){
+    var  passChar = password[Math.floor(Math.random() * password.length)];
+    final.push(passChar)
+
+  }
+
+
+
+  console.log(final)
+  return final.join("");
 }
 
 // Write password to the #password input
