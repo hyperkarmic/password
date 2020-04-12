@@ -26,4 +26,6 @@ https://owasp.org/www-community/password-special-characters
 
 5)Screenshots added in Assets.  Comments amended.  Logic amended to exclude non-numerical data on initial prompt box.
 
+6)Var turned to const/let.  Console.log statements removed.
+
 
